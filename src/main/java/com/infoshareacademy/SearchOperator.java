@@ -344,8 +344,6 @@ public class SearchOperator implements AppOperator  {
                     e.printStackTrace();
                 }
 
-                subCategoryNames = partsSubList.stream().map(Category::getName).collect(Collectors.toList());
-
                 System.out.println(partsSubList.toString());
 
             }
@@ -356,6 +354,10 @@ public class SearchOperator implements AppOperator  {
                 System.out.println("\nPrzechodzisz do modulu wybierania czesci.");
                 inputValidation = true;
             }
+
+            subCategoryNames = partsSubList.stream().map(Category::getName).collect(Collectors.toList());
+            subCategoryNamesLowerCase = subCategoryNames.stream().map(String::toLowerCase).collect(Collectors.toList());
+
         }
 
         inputValidation = false;
