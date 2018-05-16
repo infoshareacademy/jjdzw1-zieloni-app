@@ -24,7 +24,7 @@ public class JSONLoader {
     public String data;
     public JsonArray dataContent;
 
-    public String showDataType(String sURL) throws IOException {
+    public String showDataType(String sURL, String name) throws IOException {
         //sURL = "http://infoshareacademycom.2find.ru/api/v2";
         URL url = new URL(sURL);
 
@@ -32,7 +32,7 @@ public class JSONLoader {
         JsonReader rdr = Json.createReader(is);
         JsonObject jsonObject = rdr.readObject();
 
-        return data = jsonObject.getString("datatype");
+        return data = jsonObject.getString(name);
 
     }
 
@@ -51,7 +51,26 @@ public class JSONLoader {
         return dataContent = jsonArray;
     }
 
+    public JsonArray showDataArrayForDataName(String sURL, String name) throws IOException{
 
+        HttpURLConnection request = connectToUrl(sURL);
+        request.connect();
+
+        JsonReader jsonReader = Json.createReader(new InputStreamReader((InputStream) request.getContent()));
+        JsonObject jsonObject = jsonReader.readObject();
+
+        JsonArray jsonArray = (JsonArray) jsonObject.get(name);
+
+        return dataContent = jsonArray;
+    }
+
+
+
+    public HttpURLConnection connectToUrl(String sURL) throws IOException {
+
+        URL url = new URL(sURL);
+        return (HttpURLConnection) url.openConnection();
+    }
 
     @Override
     public String toString() {
