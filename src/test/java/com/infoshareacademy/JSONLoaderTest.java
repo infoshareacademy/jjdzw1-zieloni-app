@@ -7,6 +7,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 
+import javax.json.JsonArray;
 import java.io.IOException;
 import java.util.Optional;
 
@@ -26,20 +27,16 @@ class JSONLoaderTest {
     }
 
     @Test
-    void shouldShowDataArray() {
+    void shouldShowDataArray() throws IOException {
         //given
+        JSONLoader sut = new JSONLoader();
 
         //when
+        JsonArray result = sut.showDataArray(sut.MAINLINK + sut.SUBLINK);
 
         //then
+        assertThat(result).isNotNull();
     }
 
-    @Test
-    void shouldToString() {
-        //given
 
-        //when
-
-        //then
-    }
 }
