@@ -3,9 +3,9 @@ package com.infoshareacademy;
  public class UserManual implements AppOperator{
 
      public void execute() {
-         System.out.println("ZUS MANUAL\n" +
-                 "Witamy w aplikacji\n" +
-                 "ponizej znajdują sie wszystkir potrzebne ifromacje do korzystania z apki\n");
+         System.out.println("WITAMY W APLIKACJI ZUS MANUAL\n"+
+                 "W tym miejscu odnajdziesz informacje niezbędne do prawidłowego korzystania z aplikacji\n\n" +
+                 "");
      }
 
 
