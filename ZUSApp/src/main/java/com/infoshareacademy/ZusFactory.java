@@ -21,6 +21,7 @@ public class ZusFactory {
                 e.printStackTrace();
             }
         });
+        command.instruction.put("manual", new UserManual());
         command.instruction.put("start", new SearchOperator());
         command.instruction.put("exit", ()-> System.out.println("Dziękujemy za skorzytsanie z aplikacji"));
 
