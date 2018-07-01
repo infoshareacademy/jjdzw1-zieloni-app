@@ -39,7 +39,7 @@ class PartsCategoryTest {
         //given
 
         //when
-        List result = sut.getStockList("/api/v2/find/8ro/bbw/pzl");
+        List result = sut.getStockList("/api/v2/find/pm/3xt/drj/8dv/stock");
 
         //then
         assertThat(result).isNotEmpty();
